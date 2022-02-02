@@ -3,7 +3,7 @@ function formatDate(now) {
     "Sunday",
     "Monday",
     "Tuesday",
-    "Wednedsday",
+    "Wednesday",
     "Thursday",
     "Friday",
     "Saturday",

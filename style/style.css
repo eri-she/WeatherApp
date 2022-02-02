@@ -1,0 +1,36 @@
+.container {
+  max-width: 70%;
+  margin-top: 80px;
+}
+.row {
+  text-align: center;
+}
+.fa-cloud-rain {
+  font-size: 100px;
+}
+h1 {
+  margin-bottom: 0ex;
+}
+body {
+  background-size: cover;
+}
+.wind {
+  margin-bottom: 0px;
+}
+.temperature {
+  font-weight: bolder;
+  font-size: 40px;
+}
+.unit {
+  position: relative;
+  top: -24px;
+}
+
+#button-current {
+  display: block;
+  margin: auto 0px auto auto;
+  font-size: 12px;
+}
+.date {
+  margin-bottom: 0px;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/2c57e8ced8.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style/style.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body background="visual/star.jpg">
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <form id="form-search">
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control shadow"
+                placeholder="Enter a city"
+                aria-label="Recipient's username"
+                aria-describedby="button-addon2"
+                id="search-input"
+              />
+              <button
+                class="btn btn-outline-secondary shadow"
+                type="button"
+                id="button-addon2"
+              >
+                Search
+              </button>
+            </div>
+          </form>
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            id="button-current"
+          >
+            📍 Current Location
+          </button>
+          <h1 class="city">City</h1>
+          <p class="date"></p>
+          <p class="day-description">Sunny</p>
+          <hr />
+
+          <div class="row">
+            <div class="col">
+              <span class="temperature">30</span>
+              <span class="unit">
+                <a href="#" id="celcius">°C</a> |
+                <a href="#" id="fahrenheit">°F</a></span
+              >
+              <p class="wind">Wind : 23</p>
+              <p class="humidity">Humidity: 45</p>
+            </div>
+            <div class="col"><i class="fas fa-cloud-rain"></i></div>
+          </div>
+
+          <hr />
+          <div class="row">
+            <div class="col">Monday</div>
+            <div class="col">Tuesday</div>
+            <div class="col">Wednesday</div>
+            <div class="col">Thursday</div>
+            <div class="col">Friday</div>
+            <div class="col">Saturday</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="java/script.js"></script>
+  </body>
+</html>

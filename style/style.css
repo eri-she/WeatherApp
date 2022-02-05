@@ -44,3 +44,6 @@ footer {
 .linkGit {
   background-color: rgba(0, 0, 0, 0.37);
 }
+.day-description:first-letter {
+  text-transform: capitalize;
+}

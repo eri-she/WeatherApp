@@ -23,16 +23,6 @@ let time = document.querySelector(".date");
 let now = new Date();
 time.innerHTML = formatDate(now);
 
-function newFahrenheit(event) {
-  event.preventDefault();
-  let newTemperature = document.querySelector(".temperature");
-  newTemperature.innerHTML = 12;
-}
-
-let fahrenheit = document.querySelector("#fahrenheit");
-
-fahrenheit.addEventListener("click", newFahrenheit);
-
 function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#search-input").value;
@@ -68,6 +58,7 @@ function showTemperature(response) {
   document
     .querySelector("#icon")
     .setAttribute("alt", response.data.weather[0].description);
+  celcius = response.data.main.temp;
 }
 
 function showPosition(position) {
@@ -83,4 +74,20 @@ function getPosition() {
 
 let buttonCurrent = document.querySelector("#button-current");
 buttonCurrent.addEventListener("click", getPosition);
+
+function newFahrenheit(event) {
+  event.preventDefault();
+  let newTemperature = document.querySelector(".temperature");
+  newTemperature.innerHTML = Math.round((celcius * 9) / 5 + 32);
+}
+function newCelcius(event) {
+  event.preventDefault();
+  let newTemperature = document.querySelector(".temperature");
+  newTemperature.innerHTML = Math.round(celcius);
+}
+let celcius = null;
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", newFahrenheit);
+let celciusLink = document.querySelector("#celcius");
+celciusLink.addEventListener("click", newCelcius);
 search("Vienna");

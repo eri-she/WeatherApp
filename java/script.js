@@ -77,17 +77,21 @@ buttonCurrent.addEventListener("click", getPosition);
 
 function newFahrenheit(event) {
   event.preventDefault();
+  celciusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   let newTemperature = document.querySelector(".temperature");
   newTemperature.innerHTML = Math.round((celcius * 9) / 5 + 32);
 }
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", newFahrenheit);
 function newCelcius(event) {
   event.preventDefault();
+  celciusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   let newTemperature = document.querySelector(".temperature");
   newTemperature.innerHTML = Math.round(celcius);
 }
 let celcius = null;
-let fahrenheitLink = document.querySelector("#fahrenheit");
-fahrenheitLink.addEventListener("click", newFahrenheit);
 let celciusLink = document.querySelector("#celcius");
 celciusLink.addEventListener("click", newCelcius);
 search("Vienna");

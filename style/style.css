@@ -47,3 +47,11 @@ footer {
 .day-description:first-letter {
   text-transform: capitalize;
 }
+.active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+}
+
+.active:hover {
+  text-decoration: none;
+}

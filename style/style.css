@@ -55,3 +55,6 @@ small {
 .active:hover {
   text-decoration: none;
 }
+.forecast-temperature-min {
+  color: grey;
+}

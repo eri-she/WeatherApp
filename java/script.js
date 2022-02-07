@@ -1,4 +1,5 @@
-function formatDate(now) {
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
   let days = [
     "Sunday",
     "Monday",
@@ -8,20 +9,17 @@ function formatDate(now) {
     "Friday",
     "Saturday",
   ];
-  let day = days[now.getDay()];
-  let hour = now.getHours();
+  let day = days[date.getDay()];
+  let hour = date.getHours();
   if (hour < 10) {
     hour = `0${hour}`;
   }
-  let minutes = now.getMinutes();
+  let minutes = date.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
   return `${day}, ${hour}:${minutes}`;
 }
-let time = document.querySelector(".date");
-let now = new Date();
-time.innerHTML = formatDate(now);
 
 function handleSubmit(event) {
   event.preventDefault();
@@ -59,6 +57,9 @@ function showTemperature(response) {
     .querySelector("#icon")
     .setAttribute("alt", response.data.weather[0].description);
   celcius = response.data.main.temp;
+  document.querySelector(".date").innerHTML = formatDate(
+    response.data.dt * 1000
+  );
 }
 
 function showPosition(position) {

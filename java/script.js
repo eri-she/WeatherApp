@@ -94,4 +94,31 @@ function newCelcius(event) {
 let celcius = null;
 let celciusLink = document.querySelector("#celcius");
 celciusLink.addEventListener("click", newCelcius);
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+  let forecastHtml = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+      <div class="col">
+              <div class="day-1">${day}</div>
+              <img
+                src="http://openweathermap.org/img/wn/50d@2x.png"
+                alt=""
+                width="42"
+              />
+              <div class="forecast-temperature">
+                <span class="forecast-temperature-max">18°</span>
+                <span class="forecast-temperature-min">12°</span>
+              </div>
+            </div>`;
+  });
+  forecastHtml = forecastHtml + `</div>`;
+  forecastElement.innerHTML = forecastHtml;
+}
+displayForecast();
+
 search("Vienna");

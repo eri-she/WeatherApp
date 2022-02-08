@@ -96,7 +96,8 @@ let celcius = null;
 let celciusLink = document.querySelector("#celcius");
 celciusLink.addEventListener("click", newCelcius);
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data);
   let forecastElement = document.querySelector("#forecast");
   let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
   let forecastHtml = `<div class="row">`;
@@ -124,7 +125,7 @@ function getForecast(coordinates) {
   let apiKey = "59e85c7a60217259c9906fee3425b9ba";
   let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(url).then(displayForecast);
+  console.log(url);
 }
-displayForecast();
 
 search("Vienna");
